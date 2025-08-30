@@ -53,5 +53,51 @@ class Ilmoittautuminen {
 }
 
 Opiskelija "1" --> "0..*" Ilmoittautuminen : tekee
+```
+```mermaid
+erDiagram
+	direction TB
+	CUSTOMER {
+
+	}
+
+	DELIVERY-ADDRESS {
+
+	}
+
+	ORDER {
+
+	}
+
+	INVOICE {
+
+	}
+
+	ORDER-ITEM {
+
+	}
+
+	PRODUCT-CATEGORY {
+
+	}
+
+	PRODUCT {
+
+	}
+
+	Untitled-Entity {
+
+	}
+
+	CUSTOMER}|..|{DELIVERY-ADDRESS:"has"
+	CUSTOMER||--o{ORDER:"places"
+	CUSTOMER||--o{INVOICE:"liable for"
+	DELIVERY-ADDRESS||--o{ORDER:"receives"
+	INVOICE||--|{ORDER:"covers"
+	ORDER||--|{ORDER-ITEM:"includes"
+	PRODUCT-CATEGORY||--|{PRODUCT:"contains"
+	PRODUCT||--o{ORDER-ITEM:"ordered in"
+	CUSTOMER}|--|{Untitled-Entity:"  "
+```
 Kurssi     "1" --> "0..*" Ilmoittautuminen : koskee
 ```
